@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viepoint" content="width=device-width, initial-scale=1.0">
+        <title>Personal Portfolio Website - Kithuni Devma</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e5f6be1197.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/logo.png" class="logo">
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Data Science Engineering undergraduate</p>
+                    <h1>Hi, I'm <span>Kithuni</span><br>Devma Wickramasinghe..</h1>
+                </div>
+            </div>
+        </div>
+        
+        
+<!-- About Section -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/user.png">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>I am an enthusiastic undergraduate in computer Science 
+                            and Engineering with a passion for Data Science, 
+                            Machine Learning and Artificial Intelligence. Eager 
+                            to explore new experiences and constantly learn, and 
+                            thrive on staying at the forefront of technology.</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('Education')">Education</p>
+                            <p class="tab-links" onclick="opentab('Academic-Achievements')">Academic Achievements</p>
+                            <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('Skills')">Skills</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="Education">
+                            <ul>
+                                <li><span>University of Moratuwa</span><br>Department of Computer Science and Engineering<br>2022-current</li>
+                                <li><span>De Mazenod College, Kandana</span><br>2018-2020</li>
+                                <li><span>Ave Maria Convent, Negombo</span><br>2007-2018</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Academic-Achievements">
+                            <ul>
+                                <li><span>Current GPA: 3.73</span><br>BSc Hons in Computer Science and Engineering <br>Specialized in Data Science Engineering</li>
+                                <li><span>Certification in Supervised Machine Learning:Regression and Classification</span><br>DeepLearning.AI, Stanford University</li>
+                                <li><span>GCE Advanced Level Examination-Physical Science Stream(2020)</span><br>Combined Mathematics:A<br>Physics:A<br>Chemistry:A</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Experience">
+                            <ul>
+                                <li><span>Worked as an IR panelist in AIESEC Colombo South</span></li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Skills">
+                            <ul>
+                                <li><span>Programming</span><br>Proficiency in Python, C++, Java, VHDL, CSS, HTML<br>2022-current</li>
+                                <li><span>Data Base</span><br>SQL</li>
+                                <li><span>Data Structures and Algorithms</span></li>
+                                <li><span>computer Architecture</span></li>
+                                <li><span>Operating Systems</span><br>Windows,Linux and Mac</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Projects Section -->
+        <div id="projects">
+            <div class="container">
+                <h1 class="sub-title">Projects</h1>
+                <div class="projects-list">
+                    <div class="projects">
+                        <img src="images/project-1.png">
+                        <div class="layer">
+                            <h3>HRMaster Web Application</h3>
+                            <p>A comprehensive Human Resource Management System 
+                                tailored to streamline employee data management within a company.
+                            </p>
+                            <a href="#"><i class="fa-solid fa-link"></i></a>
+                        </div> 
+                    </div>
+                    <div class="projects">
+                        <img src="images/project-2.png">
+                        <div class="layer">
+                            <h3>Nano Microprocessor</h3>
+                            <p>A 4-bit nano microprocessor developed using a FPGA board. 
+                            </p>
+                            <a href="#"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+                    <!--<div class="projects">
+                        <img src="images/project-3.png">
+                        <div class="layer">
+                            <h3>Personal Portfolio Website</h3>
+                            <p>A sleek and dynamic personal portfolio showcasing my skills, projects, 
+                                and achievements in a visually appealing and user-friendly format.
+                            </p>
+                            <a href="#"><i class="fa-solid fa-link"></i></a>
+                        </div> 
+                    </div> -->
+                </div>
+                <a href="#" class="btn">See more</a>
+            </div>
+        </div>
+
+<!-- Contact Section -->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>kithuni.21@cse.mrt.ac.lk</p>
+                        <p><i class="fa-solid fa-phone"></i>+94 766154620</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/kithuni-wickramasinghe-65b8721ba/"><i class="fa-brands fa-linkedin"></i></a> 
+                            <a href="https://www.facebook.com/kithuni.wickramasinghe?mibextid=9R9pXO"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/kithu_d?igsh=N3ppYnRsNXdmNTVh&utm_source=qr"><i class="fa-brands fa-square-instagram"></i></a>
+                            <a href="https://www.threads.net/@kithu_d"><i class="fa-brands fa-square-threads"></i></a>
+                        </div>
+                        <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows=6 placeholder="Your Message" required></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright Kithu. Made with <i class="fa-solid fa-heart"></i> by Kithuni Devma Wickramasinghe</p>
+            </div>
+        </div>
+
+        <script>
+
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+
+        </script>
+
+        <script>
+            var sidemeu = document.getElementId("sidemenu");
+
+            function openmenu(){
+                sidemeu.style.right = "0";
+            }
+            function closemenu(){
+                sidemeu.style.right = "-200px";
+            }
+        </script>
+
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxgaGZwvC2v8OZognuu0nG2B6cI1RBdsuZinq3pr6PQk7halcRyP24ZpUn5qC45HtCF/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+  
+            form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response =>{
+                msg.innerHTML = "Message sent successfully."
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+              })
+              .catch(error => console.error('Error!', error.message))
+            })
+        </script>
+    </body>
+</html>
