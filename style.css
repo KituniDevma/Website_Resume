@@ -283,7 +283,7 @@ form .btn2{
 
 @media only screen and (max-width: 768px) {
     #header {
-        background-image: url(images/phone-background.png);
+        background-image: url(images/phone-background.png); 
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
