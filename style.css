@@ -281,7 +281,7 @@ form .btn2{
 
 /*-------------CSS for smaller screens-------------*/
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1200px) {
     #header {
         background-image: url(images/phone-background.png); 
         background-size: contain;
