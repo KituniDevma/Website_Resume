@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { projects } from '../data/content'
+import { assetUrl } from '../utils/assetUrl'
 
 export function Projects() {
   return (
@@ -35,7 +36,7 @@ export function Projects() {
                   className={`project__image ${project.image ? '' : 'project__image--placeholder'}`}
                 >
                   {project.image ? (
-                    <img src={project.image} alt="" loading="lazy" />
+                    <img src={assetUrl(project.image)} alt="" loading="lazy" />
                   ) : (
                     <span aria-hidden="true">{project.title.slice(0, 2)}</span>
                   )}

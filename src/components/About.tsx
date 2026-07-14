@@ -5,6 +5,7 @@ import {
   profile,
   type AboutTabId,
 } from '../data/content'
+import { assetUrl } from '../utils/assetUrl'
 
 export function About() {
   const [active, setActive] = useState<AboutTabId>('experience')
@@ -14,7 +15,7 @@ export function About() {
     <section id="about" className="section about">
       <div className="container about__grid">
         <div className="about__portrait">
-          <img src="/user.png" alt={profile.fullName} />
+          <img src={assetUrl('user.webp')} alt={profile.fullName} />
         </div>
 
         <div className="about__body">

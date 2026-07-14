@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { contactFormEndpoint, profile } from '../data/content'
+import { assetUrl } from '../utils/assetUrl'
 
 type Status = 'idle' | 'sending' | 'ok' | 'error'
 
@@ -59,7 +60,7 @@ export function Contact() {
             ))}
           </div>
 
-          <a href={profile.cvUrl} download className="btn btn--primary">
+          <a href={assetUrl(profile.cvUrl)} download className="btn btn--primary">
             Download CV
           </a>
         </div>

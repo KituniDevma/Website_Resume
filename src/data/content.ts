@@ -10,7 +10,7 @@ export const profile = {
     'I am a Generative AI Engineer passionate about data science, machine learning, and building intelligent systems that solve real-world problems. I focus on developing data-driven solutions and applying modern AI techniques to extract meaningful insights and improve decision-making. I enjoy working at the intersection of research and engineering, and I am constantly exploring new advancements in AI to build impactful solutions.',
   email: 'kithuniwickramasinghe@gmail.com',
   phone: '+94 76 615 4620',
-  cvUrl: '/Kithuni_Devma_CV.pdf',
+  cvUrl: 'Kithuni_Devma_CV.pdf',
   socials: [
     {
       label: 'LinkedIn',
@@ -186,7 +186,7 @@ export const projects: Project[] = [
     title: 'Evaluating contextual understanding of LLMs using Knowledge graphs',
     description:
       'Entity-linking and relation-extraction pipeline that converts LLM outputs into knowledge graphs for triplet comparison and semantic consistency analysis.',
-    image: '/project-llm-kg.png',
+    image: 'project-llm-kg.webp',
     href: 'https://github.com/aaivu/knowledge-xtraction',
     tags: ['LLM', 'Knowledge graphs', 'NLP'],
   },
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     title: 'Solar Energy Forecasting Web App',
     description:
       'Forecasting dashboard using PatchTST and neural network models for solar-energy time-series analysis. Built with React, Django, MongoDB, TensorFlow, and Scikit-Learn.',
-    image: '/project-5.png',
+    image: 'project-5.webp',
     href: 'https://github.com/KituniDevma/Solar-Energy-Forecasting-Web-Application',
     tags: ['ML', 'Time series', 'Full stack'],
   },
@@ -202,7 +202,7 @@ export const projects: Project[] = [
     title: 'ParkEase',
     description:
       'OpenCV-based vehicle detection and parking-slot availability monitoring for a camera-based smart parking system.',
-    image: '/project-parkease.png',
+    image: 'project-parkease.webp',
     href: 'https://github.com/KituniDevma/parking_web_application',
     tags: ['Computer vision', 'OpenCV'],
   },
@@ -210,7 +210,7 @@ export const projects: Project[] = [
     title: 'HRMaster Web Application',
     description:
       'Human Resource Management System tailored to streamline employee data management within a company.',
-    image: '/project-1.png',
+    image: 'project-1.webp',
     href: 'https://github.com/KituniDevma/HRMastery',
     tags: ['React', 'Node.js', 'MySQL'],
   },
@@ -218,7 +218,7 @@ export const projects: Project[] = [
     title: 'QuickCare Mobile App',
     description:
       'Mobile app for first aid assistance with real-time guidance and emergency help options.',
-    image: '/project-4.png',
+    image: 'project-4.webp',
     href: 'https://github.com/Quick-Care-App/QuickCare-Mobile-App',
     tags: ['Mobile', 'Health'],
   },
@@ -226,7 +226,7 @@ export const projects: Project[] = [
     title: 'RPAL Interpreter',
     description:
       'Interpreter for the functional programming language RPAL with lexical analysis, parsing, and CSE-machine evaluation.',
-    image: '/project-3.png',
+    image: 'project-3.webp',
     href: 'https://github.com/KituniDevma/Compiler',
     tags: ['Compilers', 'Java'],
   },

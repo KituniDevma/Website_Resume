@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { profile } from '../data/content'
+import { assetUrl } from '../utils/assetUrl'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -19,8 +20,8 @@ export function Hero() {
     <section id="home" className="hero">
       <div className="hero__media" aria-hidden="true">
         <picture>
-          <source media="(max-width: 900px)" srcSet="/phone-background.png" />
-          <img src="/background.png" alt="" className="hero__bg" />
+          <source media="(max-width: 900px)" srcSet={assetUrl('phone-background.webp')} />
+          <img src={assetUrl('background.webp')} alt="" className="hero__bg" />
         </picture>
         <div className="hero__veil" />
       </div>

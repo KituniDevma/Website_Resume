@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { navLinks } from '../data/content'
+import { assetUrl } from '../utils/assetUrl'
 
 export function Nav() {
   const [open, setOpen] = useState(false)
@@ -24,7 +25,7 @@ export function Nav() {
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="nav__inner">
         <a href="#home" className="nav__brand" aria-label="Home">
-          <img src="/logo.png" alt="" className="nav__logo" />
+          <img src={assetUrl('logo.png')} alt="" className="nav__logo" />
         </a>
 
         <nav className="nav__desktop" aria-label="Primary">
