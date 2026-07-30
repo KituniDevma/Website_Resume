@@ -1,15 +1,20 @@
+'use client'
+
 import { motion } from 'framer-motion'
-import { publications } from '../data/content'
+import { publications } from '@/data/content'
+import { Reveal } from './Reveal'
 
 export function Publications() {
   return (
     <section id="publications" className="section publications">
       <div className="container">
-        <p className="eyebrow">Research</p>
-        <h2>Publications</h2>
-        <p className="section__lead">
-          Peer-reviewed and workshop papers on evaluating contextual understanding in LLMs.
-        </p>
+        <Reveal>
+          <p className="eyebrow">Research</p>
+          <h2>Publications</h2>
+          <p className="section__lead">
+            Peer-reviewed and workshop papers on evaluating contextual understanding in LLMs.
+          </p>
+        </Reveal>
 
         <ul className="publications__list">
           {publications.map((pub, index) => (

@@ -1,6 +1,9 @@
+'use client'
+
 import { useState, type FormEvent } from 'react'
-import { contactFormEndpoint, profile } from '../data/content'
-import { assetUrl } from '../utils/assetUrl'
+import { contactFormEndpoint, profile } from '@/data/content'
+import { assetUrl } from '@/lib/assetUrl'
+import { Reveal } from './Reveal'
 
 type Status = 'idle' | 'sending' | 'ok' | 'error'
 
@@ -28,7 +31,7 @@ export function Contact() {
   return (
     <section id="contact" className="section contact">
       <div className="container contact__grid">
-        <div className="contact__info">
+        <Reveal className="contact__info">
           <p className="eyebrow">Contact</p>
           <h2>Let&apos;s talk</h2>
           <p className="section__lead">
@@ -63,7 +66,7 @@ export function Contact() {
           <a href={assetUrl(profile.cvUrl)} download className="btn btn--primary">
             Download CV
           </a>
-        </div>
+        </Reveal>
 
         <form className="contact__form" name="submit-to-google-sheet" onSubmit={onSubmit}>
           <label>

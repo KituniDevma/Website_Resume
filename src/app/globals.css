@@ -1,0 +1,306 @@
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0c0b0a;
+  --bg-soft: #161412;
+  --ink: #f3eee6;
+  --muted: #a39a90;
+  --accent: #e07a9a;
+  --accent-deep: #c45d7d;
+  --accent-soft: rgba(224, 122, 154, 0.45);
+  --on-accent: #140c10;
+  --line: rgba(243, 238, 230, 0.18);
+  --surface: rgba(22, 20, 18, 0.6);
+  --surface-solid: #171411;
+  --surface-input: rgba(22, 20, 18, 0.8);
+  --nav-bg: rgba(12, 11, 10, 0.82);
+  --glow-a: rgba(224, 122, 154, 0.14);
+  --glow-b: rgba(180, 140, 100, 0.08);
+  --tint: rgba(22, 20, 18, 0.55);
+
+  --hero-ink: #f8f3ec;
+  --hero-muted: rgba(248, 243, 236, 0.88);
+  --hero-accent: #e88a9f;
+  --hero-image-filter: brightness(1.04) contrast(1.04) saturate(1.12);
+  /* The portrait is a cutout now, so this only melts its base into the page. */
+  --hero-veil: linear-gradient(180deg, transparent 0%, transparent 76%, rgba(12, 11, 10, 0.72) 94%, #0c0b0a 100%);
+  --hero-glow:
+    radial-gradient(ellipse 32% 48% at 74% 44%, rgba(232, 138, 159, 0.16), transparent 72%),
+    radial-gradient(ellipse 38% 42% at 6% 76%, rgba(180, 140, 100, 0.12), transparent 70%),
+    radial-gradient(ellipse 30% 34% at 24% 6%, rgba(169, 138, 212, 0.1), transparent 72%);
+  --grain-opacity: 0.04;
+  --nav-top-ink: rgba(248, 243, 236, 0.78);
+  --nav-top-ink-strong: #f8f3ec;
+  --nav-top-border: rgba(248, 243, 236, 0.28);
+  --nav-scrim: rgba(12, 11, 10, 0.5);
+  --shadow-pop: 0 28px 60px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --bg: #fbf7f3;
+  --bg-soft: #f1e9e1;
+  --ink: #241f1d;
+  --muted: #6d635b;
+  --accent: #c4527a;
+  --accent-deep: #a63d61;
+  --accent-soft: rgba(196, 82, 122, 0.45);
+  --on-accent: #fffaf6;
+  --line: rgba(36, 31, 29, 0.2);
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-solid: #fffaf6;
+  --surface-input: rgba(255, 255, 255, 0.9);
+  --nav-bg: rgba(251, 247, 243, 0.86);
+  --glow-a: rgba(224, 122, 154, 0.26);
+  --glow-b: rgba(196, 148, 104, 0.2);
+  --tint: rgba(255, 255, 255, 0.6);
+
+  --hero-ink: #241f1d;
+  --hero-muted: #554c46;
+  --hero-accent: #a63d61;
+  --hero-image-filter: contrast(1.02) saturate(1.16);
+  --hero-veil: linear-gradient(180deg, transparent 0%, transparent 76%, rgba(251, 247, 243, 0.72) 94%, #fbf7f3 100%);
+  --hero-glow:
+    radial-gradient(ellipse 32% 48% at 74% 44%, rgba(224, 122, 154, 0.2), transparent 72%),
+    radial-gradient(ellipse 38% 42% at 6% 76%, rgba(196, 148, 104, 0.18), transparent 70%),
+    radial-gradient(ellipse 30% 34% at 24% 6%, rgba(169, 138, 212, 0.16), transparent 72%);
+  --grain-opacity: 0.055;
+  --nav-top-ink: #6d635b;
+  --nav-top-ink-strong: #241f1d;
+  --nav-top-border: rgba(36, 31, 29, 0.18);
+  --nav-scrim: rgba(251, 247, 243, 0.94);
+  --shadow-pop: 0 28px 60px rgba(36, 31, 29, 0.22);
+}
+
+:root {
+  --font-display: var(--font-display-family), 'Trebuchet MS', sans-serif;
+  --font-body: var(--font-body-family), 'Segoe UI', sans-serif;
+  --radius: 16px;
+  --border-w: 2px;
+  --gutter: clamp(1.15rem, 3.5vw, 3rem);
+  --container: min(1440px, calc(100% - (var(--gutter) * 2)));
+
+  color: var(--ink);
+  background: var(--bg);
+  font-family: var(--font-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, var(--glow-a), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 20%, var(--glow-b), transparent 50%),
+    var(--bg);
+  color: var(--ink);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/*
+ * Fine film grain over the flat background so large empty areas read as paper
+ * rather than as a blank fill. Sits under all content.
+ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+/*
+ * Full-bleed portrait on phones means the copy sits on top of it, so the veil
+ * washes the lower half. It stays clear above the text, over the face.
+ */
+@media (max-width: 660px) {
+  [data-theme='dark'] {
+    --hero-veil: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 24%,
+      rgba(12, 11, 10, 0.55) 42%,
+      rgba(12, 11, 10, 0.88) 60%,
+      #0c0b0a 100%
+    );
+  }
+
+  [data-theme='light'] {
+    --hero-veil: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 24%,
+      rgba(251, 247, 243, 0.6) 42%,
+      rgba(251, 247, 243, 0.9) 62%,
+      #fbf7f3 100%
+    );
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  z-index: 50;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-deep));
+}
+
+.section {
+  padding: clamp(4rem, 9vw, 6.5rem) 0;
+}
+
+.section--tint {
+  background: linear-gradient(180deg, transparent, var(--tint), transparent);
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.6vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.section__lead {
+  max-width: 38rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn--primary:hover {
+  background: var(--accent-deep);
+}
+
+.btn--primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn--ghost {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

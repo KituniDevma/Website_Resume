@@ -1,9 +1,19 @@
+export const siteUrl = 'https://kitunidevma.github.io/Website_Resume'
+
 export const profile = {
   name: 'Kithuni Wickramasinghe',
   firstName: 'Kithuni',
   lastName: 'Wickramasinghe',
   fullName: 'Kithuni Devma Wickramasinghe',
   role: 'Generative AI Engineer · Data Science & Machine Learning',
+  /** Cycled through by the hero typewriter. */
+  roleRotation: [
+    'Generative AI Engineer',
+    'Data Science & Machine Learning',
+    'ICML 2026 Published Author',
+  ],
+  degree: 'BSc Eng (Hons) — Computer Science & Engineering, University of Moratuwa',
+  location: 'Colombo, Sri Lanka',
   tagline:
     'Building intelligent systems at the intersection of research and engineering — from LLM evaluation to production AI workflows.',
   about:
@@ -14,7 +24,7 @@ export const profile = {
   socials: [
     {
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/kithuni-wickramasinghe',
+      href: 'https://www.linkedin.com/in/kithuni/',
     },
     {
       label: 'GitHub',
@@ -31,21 +41,150 @@ export const profile = {
   ],
 } as const
 
+/**
+ * Rotated one line at a time in the bar along the bottom of the hero.
+ * `lead` is the emphasised half, `trail` the muted qualifier.
+ */
+export const heroTicker = [
+  {
+    lead: 'Generative AI Engineer',
+    trail: 'at Arcadea Group · Toronto (Remote)',
+    logo: 'logo-arcadea.png',
+  },
+  {
+    lead: 'First Class Honours',
+    trail: 'BSc Eng (Hons) CSE, University of Moratuwa',
+    logo: 'logo-uom.png',
+  },
+  {
+    lead: 'ICML 2026',
+    trail: 'GlobalSouthML — Best Undergraduate Poster',
+  },
+  {
+    lead: '6 projects',
+    trail: 'across AI, research, full stack and systems',
+  },
+  {
+    lead: '26 tools & frameworks',
+    trail: 'Python, TensorFlow, LangChain, Next.js and more',
+  },
+  {
+    lead: '3 competition finals',
+    trail: 'Brainstorm ’24, Idealize ’24, SLRC Robotics',
+  },
+  {
+    lead: '4 engineering roles',
+    trail: 'from data science intern to AI engineer',
+  },
+  {
+    lead: 'Colombo, Sri Lanka',
+    trail: 'working remotely with Toronto',
+  },
+] as const
+
 export const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Publications', href: '#publications' },
+  { label: 'Research', href: '#publications' },
   { label: 'Contact', href: '#contact' },
 ] as const
 
-export type AboutTabId =
-  | 'experience'
-  | 'education'
-  | 'achievements'
-  | 'courses'
-  | 'technical'
-  | 'skills'
+export type Experience = {
+  company: string
+  role: string
+  period: string
+  location?: string
+  logo?: string
+  bullets: string[]
+}
+
+export const experience: Experience[] = [
+  {
+    company: 'Arcadea Group',
+    role: 'Generative AI Engineer',
+    period: 'Jul 2026 — Present',
+    location: 'Toronto, Ontario (Remote)',
+    logo: 'logo-arcadea.png',
+    bullets: [
+      'Build generative AI features and model-driven workflows for production software products.',
+      'Design evaluation and automation pipelines that keep AI behaviour reliable as usage grows.',
+    ],
+  },
+  {
+    company: 'Arcadea Group',
+    role: 'AI Engineer Intern',
+    period: 'Dec 2025 — Jun 2026',
+    location: 'Toronto, Ontario (Remote)',
+    logo: 'logo-arcadea.png',
+    bullets: [
+      'Prototyped applied AI solutions and supporting data pipelines before transitioning to a full-time role.',
+    ],
+  },
+  {
+    company: 'University of Moratuwa',
+    role: 'Teaching Assistant',
+    period: 'Jul 2025 — Dec 2025',
+    location: 'Dept. of Computer Science & Engineering',
+    logo: 'logo-uom.png',
+    bullets: [
+      'Supported undergraduate teaching, lab guidance, and academic assessment for CSE modules.',
+    ],
+  },
+  {
+    company: 'Octave — John Keells Holdings',
+    role: 'Data Science Intern',
+    period: 'Dec 2024 — Jun 2025',
+    location: 'Advanced Analytics Division · Colombo',
+    logo: 'logo-octave.png',
+    bullets: [
+      'Contributed to the flagship churn-prediction and campaign-optimisation use case for Keells Supermarkets.',
+      'Built machine learning models and analysed drift and retention to drive actionable marketing insights.',
+      'Served as Head of Interns, coordinating peer progress and collaboration with senior data scientists.',
+    ],
+  },
+]
+
+export type SkillGroup = {
+  id: string
+  label: string
+  skills: string[]
+}
+
+export const skillGroups: SkillGroup[] = [
+  {
+    id: 'languages',
+    label: 'Languages',
+    skills: ['Python', 'Java', 'C++', 'RPAL', 'VHDL', 'SQL'],
+  },
+  {
+    id: 'ml',
+    label: 'ML & AI',
+    skills: [
+      'Scikit-Learn',
+      'TensorFlow',
+      'NumPy',
+      'Pandas',
+      'LangChain',
+      'OpenCV',
+      'Knowledge Graphs',
+    ],
+  },
+  {
+    id: 'web',
+    label: 'Web & Data',
+    skills: ['Next.js', 'HTML', 'CSS', 'Django', 'Node.js', 'MySQL', 'MongoDB'],
+  },
+  {
+    id: 'tools',
+    label: 'Tools & Platforms',
+    skills: ['Git', 'VS Code', 'Power BI', 'AWS', 'Linux', 'Windows'],
+  },
+]
+
+export type AboutTabId = 'education' | 'achievements' | 'certifications' | 'skills'
 
 export const aboutTabs: {
   id: AboutTabId
@@ -53,43 +192,18 @@ export const aboutTabs: {
   items: { title: string; detail?: string }[]
 }[] = [
   {
-    id: 'experience',
-    label: 'Experience',
-    items: [
-      {
-        title: 'Generative AI Engineer — Arcadea Group',
-        detail:
-          'Toronto, Ontario (Remote) · Apr 2026–present · Applied AI solutions, model-driven workflows, and automation for production products',
-      },
-      {
-        title: 'Generative AI Engineer Intern — Arcadea Group',
-        detail:
-          'Toronto, Ontario (Remote) · Dec 2025–Apr 2026 · Generative AI engineering internship before transitioning to full-time',
-      },
-      {
-        title: 'Teaching Assistant — University of Moratuwa',
-        detail:
-          'Dept. of Computer Science & Engineering · Jul 2025–Dec 2025 · Supported undergraduate teaching, guidance, and academic work',
-      },
-      {
-        title: 'Data Science Intern — Octave (John Keells Holdings)',
-        detail:
-          'Dec 2024–Jun 2025 · ML for churn prediction, campaign optimization, drift analysis, and retention insights · Head of Interns',
-      },
-    ],
-  },
-  {
     id: 'education',
     label: 'Education',
     items: [
       {
         title: 'University of Moratuwa',
         detail:
-          'BSc Eng (Hons), Data Science and Engineering · 2022–2026 · Current GPA: 3.71',
+          'BSc Eng (Hons), Computer Science & Engineering — Data Science and Engineering · 2022–2026 · First Class Honours',
       },
       {
         title: 'De Mazenod College, Kandana',
-        detail: 'GCE Advanced Level — Physical Science · 2018–2020 · 3 A’s',
+        detail:
+          'GCE Advanced Level — Physical Science · 2018–2020 · 3 A’s (Combined Maths, Physics, Chemistry)',
       },
       {
         title: 'Ave Maria Convent, Negombo',
@@ -101,6 +215,10 @@ export const aboutTabs: {
     id: 'achievements',
     label: 'Achievements',
     items: [
+      {
+        title: 'Best Undergraduate Poster — GSML @ ICML 2026',
+        detail: 'Also runner-up in the 3-Minute Presentation Competition',
+      },
       {
         title: 'Brainstorm ’24',
         detail: 'Finalist (Top 10)',
@@ -124,12 +242,13 @@ export const aboutTabs: {
     ],
   },
   {
-    id: 'courses',
-    label: 'Courses',
+    id: 'certifications',
+    label: 'Certifications',
     items: [
       {
         title: 'Machine Learning Specialization — DeepLearning.AI / Stanford',
-        detail: 'Coursera',
+        detail:
+          'Coursera · Supervised Machine Learning: Regression and Classification · Advanced Learning Algorithms',
       },
       {
         title: 'AWS Academy Graduate',
@@ -146,21 +265,6 @@ export const aboutTabs: {
     ],
   },
   {
-    id: 'technical',
-    label: 'Technical',
-    items: [
-      { title: 'Programming', detail: 'Python, Java, C++, RPAL, VHDL' },
-      {
-        title: 'Machine Learning',
-        detail: 'Scikit-Learn, NumPy, Pandas, TensorFlow',
-      },
-      { title: 'Databases', detail: 'MySQL, MongoDB' },
-      { title: 'Web & AI', detail: 'React, LangChain, HTML, CSS' },
-      { title: 'Tools', detail: 'Git, VS Code' },
-      { title: 'Systems', detail: 'Windows, Linux' },
-    ],
-  },
-  {
     id: 'skills',
     label: 'Soft skills',
     items: [
@@ -173,12 +277,23 @@ export const aboutTabs: {
   },
 ]
 
+export const projectFilters = [
+  'All',
+  'AI / ML',
+  'Research',
+  'Full Stack',
+  'Systems',
+] as const
+
+export type ProjectFilter = (typeof projectFilters)[number]
+
 export type Project = {
   title: string
   description: string
   image?: string
   href?: string
   tags: string[]
+  categories: Exclude<ProjectFilter, 'All'>[]
 }
 
 export const projects: Project[] = [
@@ -189,14 +304,16 @@ export const projects: Project[] = [
     image: 'project-llm-kg.webp',
     href: 'https://github.com/aaivu/knowledge-xtraction',
     tags: ['LLM', 'Knowledge graphs', 'NLP'],
+    categories: ['Research', 'AI / ML'],
   },
   {
     title: 'Solar Energy Forecasting Web App',
     description:
-      'Forecasting dashboard using PatchTST and neural network models for solar-energy time-series analysis. Built with React, Django, MongoDB, TensorFlow, and Scikit-Learn.',
+      'Forecasting dashboard using PatchTST and neural network models for solar-energy time-series analysis, backed by Django, MongoDB, TensorFlow, and Scikit-Learn.',
     image: 'project-5.webp',
-    href: 'https://github.com/KituniDevma/Solar-Energy-Forecasting-Web-Application',
+    href: 'https://github.com/KituniDevma/Solar-Energy',
     tags: ['ML', 'Time series', 'Full stack'],
+    categories: ['AI / ML', 'Full Stack'],
   },
   {
     title: 'ParkEase',
@@ -205,14 +322,16 @@ export const projects: Project[] = [
     image: 'project-parkease.webp',
     href: 'https://github.com/KituniDevma/parking_web_application',
     tags: ['Computer vision', 'OpenCV'],
+    categories: ['AI / ML'],
   },
   {
     title: 'HRMaster Web Application',
     description:
-      'Human Resource Management System tailored to streamline employee data management within a company.',
+      'Human Resource Management System tailored to streamline employee data management within a company, supporting managers, employees, and an administrator.',
     image: 'project-1.webp',
     href: 'https://github.com/KituniDevma/HRMastery',
-    tags: ['React', 'Node.js', 'MySQL'],
+    tags: ['Node.js', 'MySQL', 'Full stack'],
+    categories: ['Full Stack'],
   },
   {
     title: 'QuickCare Mobile App',
@@ -221,14 +340,16 @@ export const projects: Project[] = [
     image: 'project-4.webp',
     href: 'https://github.com/Quick-Care-App/QuickCare-Mobile-App',
     tags: ['Mobile', 'Health'],
+    categories: ['Full Stack'],
   },
   {
     title: 'RPAL Interpreter',
     description:
-      'Interpreter for the functional programming language RPAL with lexical analysis, parsing, and CSE-machine evaluation.',
+      'Interpreter for the functional programming language RPAL with lexical analysis, parsing, AST standardisation, and CSE-machine evaluation.',
     image: 'project-3.webp',
     href: 'https://github.com/KituniDevma/Compiler',
     tags: ['Compilers', 'Java'],
+    categories: ['Systems'],
   },
 ]
 
@@ -240,7 +361,7 @@ export const publications = [
     authors:
       'Mamta Nallaretnam, Subavarshana Arumugam, Kithuni Wickramasinghe, Chamath Gunapala, Uthayasanker Thayasivam, Kamal Premaratne, Pragatheeswaran Vipulanandan',
     description:
-      'A knowledge graph–based evaluation framework introducing S3KG, a hybrid structural–semantic similarity measure, with a diagnostic framework for categorizing reasoning errors in LLM responses.',
+      'A knowledge graph–based evaluation framework introducing S3KG, a hybrid structural–semantic similarity measure, with a diagnostic framework for categorizing reasoning errors in LLM responses. Received the Best Undergraduate Poster Award and runner-up in the 3-Minute Presentation Competition.',
     href: 'https://icml.cc/virtual/2026/78308',
   },
 ]

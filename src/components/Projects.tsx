@@ -1,28 +1,56 @@
+'use client'
+
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { projects } from '../data/content'
-import { assetUrl } from '../utils/assetUrl'
+import { projectFilters, projects, type ProjectFilter } from '@/data/content'
+import { assetUrl } from '@/lib/assetUrl'
+import { Reveal } from './Reveal'
 
 export function Projects() {
+  const [filter, setFilter] = useState<ProjectFilter>('All')
+
+  const visible =
+    filter === 'All'
+      ? projects
+      : projects.filter((project) => project.categories.includes(filter))
+
   return (
     <section id="projects" className="section projects">
       <div className="container">
-        <p className="eyebrow">Selected work</p>
-        <h2>Projects</h2>
-        <p className="section__lead">
-          From LLM evaluation and forecasting systems to computer vision and full-stack apps.
-        </p>
+        <Reveal>
+          <p className="eyebrow">Selected work</p>
+          <h2>Projects</h2>
+          <p className="section__lead">
+            From LLM evaluation and forecasting systems to computer vision and full-stack apps.
+          </p>
+        </Reveal>
+
+        <div className="tabs" role="tablist" aria-label="Filter projects">
+          {projectFilters.map((option) => (
+            <button
+              key={option}
+              type="button"
+              role="tab"
+              aria-selected={filter === option}
+              className={`tabs__btn ${filter === option ? 'is-active' : ''}`}
+              onClick={() => setFilter(option)}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
 
         <ul className="projects__list">
-          {projects.map((project, index) => (
+          {visible.map((project, index) => (
             <motion.li
               key={project.title}
               className="project"
-              initial={{ opacity: 0, y: 32 }}
+              initial={{ opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
+              viewport={{ once: true, margin: '-50px' }}
               transition={{
-                duration: 0.55,
-                delay: Math.min(index * 0.06, 0.36),
+                duration: 0.5,
+                delay: Math.min(index * 0.06, 0.3),
                 ease: [0.22, 1, 0.36, 1],
               }}
             >

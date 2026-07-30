@@ -1,7 +1,10 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { navLinks } from '../data/content'
-import { assetUrl } from '../utils/assetUrl'
+import { navLinks } from '@/data/content'
+import { assetUrl } from '@/lib/assetUrl'
+import { ThemeToggle } from './ThemeToggle'
 
 export function Nav() {
   const [open, setOpen] = useState(false)
@@ -22,7 +25,12 @@ export function Nav() {
   }, [open])
 
   return (
-    <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+    <motion.header
+      className={`nav ${scrolled ? 'nav--scrolled' : ''}`}
+      initial={{ y: -28, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    >
       <div className="nav__inner">
         <a href="#home" className="nav__brand" aria-label="Home">
           <img src={assetUrl('logo.png')} alt="" className="nav__logo" />
@@ -36,17 +44,21 @@ export function Nav() {
           ))}
         </nav>
 
-        <button
-          type="button"
-          className="nav__toggle"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span />
-          <span />
-        </button>
+        <div className="nav__actions">
+          <ThemeToggle />
+
+          <button
+            type="button"
+            className="nav__toggle"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -75,6 +87,6 @@ export function Nav() {
           </motion.nav>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   )
 }

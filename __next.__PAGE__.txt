@@ -1,0 +1,14 @@
+1:"$Sreact.fragment"
+2:I[46083,["/Website_Resume/_next/static/chunks/158myu8e_yme3.js","/Website_Resume/_next/static/chunks/3t6jb3cx21mgo.js"],"ScrollProgress"]
+3:I[84834,["/Website_Resume/_next/static/chunks/158myu8e_yme3.js","/Website_Resume/_next/static/chunks/3t6jb3cx21mgo.js"],"Nav"]
+4:I[32177,["/Website_Resume/_next/static/chunks/158myu8e_yme3.js","/Website_Resume/_next/static/chunks/3t6jb3cx21mgo.js"],"Hero"]
+5:I[55786,["/Website_Resume/_next/static/chunks/158myu8e_yme3.js","/Website_Resume/_next/static/chunks/3t6jb3cx21mgo.js"],"About"]
+6:I[15,["/Website_Resume/_next/static/chunks/158myu8e_yme3.js","/Website_Resume/_next/static/chunks/3t6jb3cx21mgo.js"],"Experience"]
+7:I[87114,["/Website_Resume/_next/static/chunks/158myu8e_yme3.js","/Website_Resume/_next/static/chunks/3t6jb3cx21mgo.js"],"Skills"]
+8:I[48005,["/Website_Resume/_next/static/chunks/158myu8e_yme3.js","/Website_Resume/_next/static/chunks/3t6jb3cx21mgo.js"],"Projects"]
+9:I[36357,["/Website_Resume/_next/static/chunks/158myu8e_yme3.js","/Website_Resume/_next/static/chunks/3t6jb3cx21mgo.js"],"Publications"]
+a:I[75854,["/Website_Resume/_next/static/chunks/158myu8e_yme3.js","/Website_Resume/_next/static/chunks/3t6jb3cx21mgo.js"],"Contact"]
+b:I[97367,["/Website_Resume/_next/static/chunks/158myu8e_yme3.js"],"OutletBoundary"]
+c:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","$L3",null,{}],["$","main",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{}],["$","$L9",null,{}],["$","$La",null,{}]]}],["$","footer",null,{"className":"footer","children":["$","div",null,{"className":"footer__inner","children":[["$","p",null,{"children":["© ",2026," ","Kithuni Devma Wickramasinghe"]}],["$","p",null,{"children":"Built with Next.js"}]]}]}]],[["$","script","script-0",{"src":"/Website_Resume/_next/static/chunks/3t6jb3cx21mgo.js","async":true}]],["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"nqRFWeJexm35_VFdrvMmp"}
+d:null
